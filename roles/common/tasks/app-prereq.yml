@@ -11,7 +11,7 @@
 - name: Create App Directory
   ansible.builtin.file:
     path: "{{ app_path }}"
-    state: present
+    state: absent
 
 - name: download & Extract Application Content
   ansible.builtin.unarchive:
