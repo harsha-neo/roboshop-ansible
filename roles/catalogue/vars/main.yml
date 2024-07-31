@@ -1,4 +1,4 @@
-component: catalogue
+component: catalogue service
 app_path: /app
 schema_setup: mongo
 schema_files:
