@@ -3,8 +3,8 @@ Description = Catalogue Service
 
 [Service]
 User=roboshop
-Environment=MONGO={{ secrets.MONGO }}
-Environment=MONGO_URL="{{ secrets.MONGO_URL }}"
+Environment=MONGO=true
+Environment=MONGO_URL="mongodb://mongo.dev.harshaneo.online:27017/catalogue"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue
 
