@@ -13,14 +13,6 @@
     path: "{{ app_path }}"
     state: absent
 
-
-- name: Download Application Content
-  ansible.builtin.get_url:
-    url: https://roboshop-artifacts.s3.amazonaws.com/${component}-v3.zip
-    dest: /tmp/${{component}}.zip
-
-
-
 - name: download & Extract Application Content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/${component}-v3.zip
