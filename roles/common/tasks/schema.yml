@@ -1,6 +1,6 @@
 - name: COpy MongoDB repo file
   ansible.builtin.template:
-    src: mongo.repo
+    src: mongo.repoo
     dest: /etc/yum.repos.d/mongo.repo
 
 - name: Install MongoDB Client
@@ -9,3 +9,5 @@
     state: latest
 - name: Load Master Data
   ansible.builtin.shell: mongosh --host 172.31.33.130 </app/db/master-data.js
+
+
