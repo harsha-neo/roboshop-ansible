@@ -8,6 +8,6 @@
     name: mongodb-mongosh
     state: latest
 - name: Load Master Data
-  ansible.builtin.shell: mongosh --host mongo.{{ env }}.harshaneo.online </app/db/master-data.js
+  ansible.builtin.shell: mongosh --host mongo.dev.harshaneo.online </app/db/master-data.js
 
 
