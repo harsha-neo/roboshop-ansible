@@ -15,15 +15,14 @@
       ansible.builtin.shell: mongosh --host mongo.{{ env }}.harshaneo.online </app/db/{{ item }}.js
       loop: "{{schema_files}}"
 
-
 - name: Load MySQL schema
   when: schema_setup == "mysql"
   block:
-    - name: Install mysql client
+    - name: Install mysql Client
       ansible.builtin.dnf:
         name: mysql
         state: latest
 
     - name: Load Master Data
-      ansible.builtin.shell: mysql -h mysql.{{ env }}.harshaneoonline -uroot -pRoboShop@1 </app/db/{{item }}.sql
-      loop: "{{schema_files}"
+      ansible.builtin.shell: mysql -h mysql.{{ env }}.harshaneo.online -uroot -pRoboShop@1 < /app/db/{{ item }}.sql
+      loop: "{{schema_files}}"
