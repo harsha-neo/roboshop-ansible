@@ -14,6 +14,8 @@
     - name: Load Master Data
       ansible.builtin.shell: mongosh --host mongo.{{ env }}.harshaneo.online </app/db/{{ item }}.js
       loop: "{{schema_files}}"
+
+
 - name: Load MySQL schema
   when: schema_setup == "mysql"
   block:
